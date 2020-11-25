@@ -1,0 +1,39 @@
+Medicare
+
+------------Traditional------------------------
+Part A Mandatory
+Part B Conditional -> Covered by co. ins or spouse ins.
+Part D Prescription
+
+
+------------Medicare advantage-----------------
+Part C is equivalent to A+B+C
+Sold by private cons.
+
+------------Business humana is into------------
+Fee based service
+value based service
+
+
+-------------Population insights compass for value based programs---------
+KPI -> key performance integrity
+
+
+PFFS -> Private fee for service
+
+Downstream application
+
+ICD -> Interface contract document
+
+Ingest-> receiving data and putting it into a system
+
+Aggregator-> calculation data manipulation
+
+Output table -> Report
+
+
+----------data procedure-----
+
+Raw data -> uniform -> ICD file table structure-> Aggregate-> Output -> Reports(Acuity interface)
+
+Threshold
