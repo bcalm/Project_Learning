@@ -1,0 +1,20 @@
+Question -> What is pagination?
+Answer -> Pagination is programming technic in which We didn't load all the data in UI in one shot because the data is large in nature. We divide the data in equal number of chunks and showed in multiple pages. These pages generally contains *Previous Page* and *Next Page* link.
+
+Question -> What is BiFunction in java ?
+Answer -> BiFunction in java is a functional interface which takes two arguments and return and returns a result.
+  Ex. public class BiFunctionExample1 {
+      	public static void main(String[] args) {
+	      	BiFunction<String, String, String> function1 = (s1, s2) -> {
+		      	String s3 = s1 + s2;
+			      return s3;
+      		};
+		      System.out.println(function1.apply("Hello", ".COM"));
+
+		      BiFunction<Integer, Integer, Integer> function2 = (a, b) -> a + b;
+		      System.out.println(function2.apply(100, 200));
+	}
+}
+
+Question:-> What is lombok in java?
+Answer:-> Lombok is a plugin often used in java programming world. It is used to avoid repetitive code. Let's suppose you have 10  private fields in your entity class so it's verbose to write getter and setter for all the fields. Than lombok comes into the picture, It provides you a number of annotations which used to generates getter and setter and many other things. For doing that we just need to add lombok in dependency list and lombok is just only build time dependency we don't need this at run time.
