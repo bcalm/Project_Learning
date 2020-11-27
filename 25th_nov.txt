@@ -1,0 +1,3 @@
+Question:-> What is ApachePOI?
+Answer:-> ApachePOI is a open-source java library to create and manipulate various file formats based on Microsoft office. Using POI, we can perform create, update and read operations on many file formats.For example, Java doesn't provide built-in support for working with excel files, so we need an open source library for doing that such as ApachePOI.
+

@@ -1,0 +1,15 @@
+Question:-> What is JOOQ ?
+Answer:-> jOOQ is a popular Java database library, that lets you write typesafe SQL queries in Java.
+
+Question:->How does it work?
+Answer:-> We can use JOOQ’s code generator to connect to your database and generate Java classes that model your database tables and columns.
+  Instead of writing SQL String statements with plain JDBC, you will use those generated Java classes to write your SQL queries.
+jOOQ will conveniently turn these Java classes and queries into real SQL, execute them against the database and map the results back to Java code.
+
+Question:-> What is regression testing?
+Answer:-> In agile, We follow TDD principle and testing needs to develop with each spring. 
+  Testers must make sure that new changes don't affect existing 
+  functionality of the application. This is known as regression testing.
+  Regression testing ensures that previous functionality of the application works effectively and new changes have not introduced new bugs.
+  Regression tests should be employed whether there is a small localized change to the software or a larger change.
+  Teams must verify that new code does not conflict with older code, and that code that has not been changed is still working as expected.
