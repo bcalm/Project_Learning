@@ -1,0 +1,139 @@
+Question: What is jenkins?
+Answer: Jenkins is an open source automation server which is used to be automate all tasks related to 
+  building, testing or deploying the software.
+
+Question: What is the steps for setting local setup for jenkins?
+Answer: 
+1) Install Jenkins to your local machine.
+    Command: brew install jenkins-lts
+
+2) Start the jenkins server
+    Command: brew services start jenkins-lts
+
+3) Get the installation password
+    Command: cat /Users/vikramSingh/.jenkins/secrets/initialAdminPassword
+
+4) Go to localHost:8080 and fill the installation password
+
+5) Install suggested plugins and create a jenkins username
+
+6) Set the jenkins Url
+
+Question: How to add any application to Jenkins?
+Answer: 
+
+1) Open Jenkins dashboard
+2) Click on new Item(top left)
+3) Enter an item name
+4) Select type of project
+5) Fill the necessary details
+
+Question: How to add pipeline to application via UI?
+Answer: 
+
+1) Open Jenkins dashboard
+2) Click on new Item(top left)
+3) Enter an item name
+4) Select Free Style project
+5) In source code management select Git
+6) Enter the repository URL and select the branch to be run the pipeline (: default master)
+7) Build section 
+  1) Select add build step 
+  2) Select Gradle/ maven/ant
+  3) Write the tasks separated by space in the tasks section
+    eg. clean build test
+  4) Save the file and click on build now to run the job
+
+Question: How to run the job periodically?
+Answer: 
+
+1) Go the configure
+2) In Build Triggers, Select Build periodically and enter the time period.
+
+Question: How to add pipeline to application via JenkinsFile?
+Answer: 
+
+1) Open Jenkins dashboard
+2) Click on new Item(top left)
+3) Enter an item name
+4) Select pipeline project
+5) In source code management select Git
+6) Enter the repository URL and select the branch to be run the pipeline (: default master)
+7) In Pipeline definition select the Pipeline script from SCM
+8) In SCM select Git
+    Enter repository Url and specify branch
+9) UnMark the checkbox Lightweight checkout
+
+Question: How to add pipeline in JenkinsFile?
+Answer: 
+
+----------------------JenkinsFile------------------------------------------------------
+pipeline {
+    agent any
+
+    stages {
+        stage('Compile') {
+            steps {
+                gradlew('clean', 'classes')
+            }
+        }
+
+    }
+}
+
+def gradlew(String... args) {
+    sh "./gradlew ${args.join(' ')} -s"
+}
+------------------------------------------------------------------------------------
+
+In above file we can create a pipeline 
+1) Inside pipeline specify agent if not specific fill any
+2) Stages: It is the list of all stage which you want to run before deploying your project
+3) Stage: Specify the stage name for eg: build, test
+4) Steps: For each steps what is the required steps we need to run
+5) gradlew: a private function to execute the gradle Command
+
+Question: How to add build time parameters in JenkinsFile?
+Answer: 
+
+----------------------JenkinsFile------------------------------------------------------
+ parameters {
+            string(name: 'Username', defaultValue: 'Vikram', description: 'Enter your username?')
+    }
+------------------------------------------------------------------------------------
+
+1) Add parameters block inside pipeline section
+2) Write the parameter type specify name, default value and description
+3) In UI you will get build with parameters in place of build now
+
+Question: How to use build time parameter in application?
+Answer: There is basically two steps to consume build parameters in application
+
+1) By CMD line args:
+
+  We can get all the build parameter through PARAMS variable in jenkins file
+  we can pass as cmd line args to the gradle/maven/ant
+
+2) By env variable
+
+  In jenkins file we can set the build parameters as env variable
+  Add the following code to the JenkinsFile
+
+-------------------
+environment {
+            username = "${params.Username}"
+            DB_ENGINE    = "sqlite"
+     }
+-------------------
+
+
+
+
+
+
+
+
+
+
+
+
