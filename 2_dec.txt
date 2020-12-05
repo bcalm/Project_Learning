@@ -1,0 +1,13 @@
+Question: What is sql_injection?
+Answer: Sql_injection is a technique which used by hackers to access the unauthorize data from your databases
+  or destroy some data in your database.
+
+Question: How is the sql_injection works?
+Answer: In Web UI when we allow user to fill some inputs than someone can fill a valid sql scripts
+  and we unknowingly run that scripts inside our databases.
+    eg: UserName: 105 OR 1=1
+
+In above example someone can fill the username like this and when we will run the query it give look like this
+  eg: SELECT * FROM Users WHERE UserId = 105 OR 1=1;
+
+Now user can access all the data of users table because of this valid sql script;
